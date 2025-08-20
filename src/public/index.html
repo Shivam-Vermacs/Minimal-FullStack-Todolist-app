@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tasks</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card" aria-labelledby="tasks-header">
+        <header class="card-header row">
+          <h1 id="tasks-header">Tasks</h1>
+          <div class="row gap">
+            <span id="user-email" class="muted"></span>
+            <button id="logout" class="btn" aria-label="Logout">Logout</button>
+          </div>
+        </header>
+
+        <div class="stack">
+          <label class="row input-row">
+            <input
+              id="new-todo"
+              type="text"
+              placeholder="Add a new task"
+              aria-label="Add a new task"
+            />
+            <button id="add-btn" class="btn" aria-label="Add task">Add</button>
+          </label>
+
+          <div class="tabs" role="tablist" aria-label="Filters">
+            <button
+              class="tab active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
+            >
+              All
+            </button>
+            <button
+              class="tab"
+              data-filter="active"
+              role="tab"
+              aria-selected="false"
+            >
+              Active
+            </button>
+            <button
+              class="tab"
+              data-filter="completed"
+              role="tab"
+              aria-selected="false"
+            >
+              Completed
+            </button>
+          </div>
+
+          <ul id="todo-list" class="list" aria-live="polite"></ul>
+
+          <footer class="row space-between">
+            <span id="count" class="muted"></span>
+            <button
+              id="clear-completed"
+              class="btn subtle"
+              aria-label="Clear completed"
+            >
+              Clear completed
+            </button>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

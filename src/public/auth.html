@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Auth • Tasks</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card" aria-labelledby="auth-header">
+        <header class="card-header">
+          <h1 id="auth-header">Sign in</h1>
+        </header>
+        <div class="auth-toggle">
+          <button id="btn-login" class="tab active" aria-pressed="true">
+            Login
+          </button>
+          <button id="btn-signup" class="tab" aria-pressed="false">
+            Signup
+          </button>
+        </div>
+
+        <form id="auth-form" class="stack" novalidate>
+          <label class="stack">
+            <span>Email</span>
+            <input
+              id="email"
+              type="email"
+              autocomplete="email"
+              required
+              aria-required="true"
+            />
+          </label>
+          <label class="stack">
+            <span>Password</span>
+            <input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              aria-required="true"
+              minlength="6"
+            />
+          </label>
+          <button type="submit" class="btn" aria-label="Submit">
+            Continue
+          </button>
+          <p
+            id="auth-error"
+            class="error"
+            role="alert"
+            aria-live="assertive"
+          ></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="./auth.js"></script>
+  </body>
+</html>
